@@ -1,0 +1,23 @@
+auth_login:
+  pattern:  /login
+  defaults: { _controller: OAuthBundle:Auth:login }
+
+auth_service_login:
+  pattern:  /login/:service
+  defaults: { _controller: OAuthBundle:Auth:login }
+
+auth_callback:
+  pattern:  /callback/:service
+  defaults: { _controller: OAuthBundle:Auth:callback }
+  
+auth_denied:
+  pattern:  /denied
+  defaults: { _controller: OAuthBundle:Auth:denied }
+  
+auth_profile:
+  pattern:  /profile
+  defaults: { _controller: OAuthBundle:Auth:profile }
+     
+auth_logout:
+  pattern:  /logout
+  defaults: { _controller: OAuthBundle:Auth:logout }

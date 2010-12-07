@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://www.symfony-project.org/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.symfony-project.org/schema/dic/services http://www.symfony-project.org/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="oauth.session.class">Bundle\OAuthBundle\Session</parameter>
+    </parameters>
+
+    <services>
+        <service id="oauth.session" class="%oauth.session.class%" shared="true">
+            <argument type="service" id="session" />
+			<call method="addService">
+				<argument type="service" id="oauth.facebook" />
+			</call>
+			<call method="addService">
+				<argument type="service" id="oauth.twitter" />
+			</call>
+        </service>
+    </services>
+</container>
