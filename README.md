@@ -6,32 +6,33 @@ OAuthBundle for Symfony2 that uses Twitter and Facebook
 Installation
 ============
 
-  1. Add my fork of twitteroauth, the facebook php sdk and the OAuthBundle als submodule
+  1. Add my fork of twitteroauth, the facebook php sdk and the OAuthBundle as submodule
 
-        $ git submodule add git://github.com/ruudk/twitteroauth.git src/vendor/twitteroauth
+        git submodule add git://github.com/ruudk/twitteroauth.git vendor/twitteroauth
 		
-        $ git submodule add git://github.com/facebook/php-sdk.git src/vendor/facebook-php-sdk
+        git submodule add git://github.com/facebook/php-sdk.git vendor/facebook-php-sdk
 
-        $ git submodule add git://github.com/ruudk/OAuthBundle.git src/Bundle/OAuthBundle
+        git submodule add git://github.com/ruudk/OAuthBundle.git src/OnePlusOne/OAuthBundle
 
 
   2. Add this bundle to your application's kernel:
 
-          // application/ApplicationKernel.php
+          // application/AppKernel.php
           public function registerBundles()
           {
               return array(
                   // ...
-                  new Bundle\OAuthBundle\OAuthBundle(),
+                  new OnePlusOne\OAuthBundle\OAuthBundle(),
                   // ...
               );
           }
 
-  3. Add TwitterOAuth to the autoloader
+  3. Add OnePlusOne and TwitterOAuth to the autoloader
 
           $loader->registerNamespaces(array(
             // ...
-            'TwitterOAuth'                   => $vendorDir.'/twitteroauth',
+            'OnePlusOne'                     => __DIR__.'/../src',
+            'TwitterOAuth'                   => __DIR__.'/../vendor/twitteroauth',
           ));
 
   4. Configure the `oauth` service in your config:
@@ -48,10 +49,17 @@ Installation
             key: 123
             secret: abc
 
-  5. Load the routings in your routing.yml:
+  5. Check if the PHP template engine is enabled
+
+          # application/config/config.yml
+          app.config:
+            // ...
+            templating:    { engines: ['php', 'twig'] }
+
+  6. Load the routings in your routing.yml:
 
           OAuthBundle:
-		    resource: OAuthBundle/Resources/config/routing.yml
+            resource: OAuthBundle/Resources/config/routing.yml
 
 Usage
 =====

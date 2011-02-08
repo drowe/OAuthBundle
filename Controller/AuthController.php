@@ -1,6 +1,6 @@
 <?php
 
-namespace Bundle\OAuthBundle\Controller;
+namespace OnePlusOne\OAuthBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 

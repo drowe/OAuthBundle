@@ -1,6 +1,6 @@
 <?php
 
-namespace Bundle\OAuthBundle\DependencyInjection;
+namespace OnePlusOne\OAuthBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
@@ -39,6 +39,8 @@ class OAuthExtension extends Extension
 		$loader = new XmlFileLoader($container, __DIR__.'/../Resources/config');
 		$loader->load('facebook.xml');
 		
+		$config = array_shift($config);
+		
 		if (isset($config['service']['class']))
 			$container->setParameter('oauth.facebook.service.class', $config['service']['class']);
 			
@@ -67,6 +69,8 @@ class OAuthExtension extends Extension
     public function twitterLoad($config, ContainerBuilder $container)
     {
 		$this->loadDefaults($container);
+		
+		$config = array_shift($config);
 	
 		$loader = new XmlFileLoader($container, __DIR__.'/../Resources/config');
 		$loader->load('twitter.xml');

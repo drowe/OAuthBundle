@@ -1,6 +1,6 @@
 <?php
 
-namespace Bundle\OAuthBundle\Services;
+namespace OnePlusOne\OAuthBundle\Services;
 
 use Symfony\Component\HttpFoundation\Session,
 	Symfony\Component\HttpFoundation\Request;

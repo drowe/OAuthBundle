@@ -1,10 +1,10 @@
 <?php
 
-namespace Bundle\OAuthBundle;
+namespace OnePlusOne\OAuthBundle;
 
 use Symfony\Component\HttpFoundation\Session as HttpSession;
 
-use Bundle\OAuthBundle\Services\Service;
+use OnePlusOne\OAuthBundle\Services\Service;
 
 class Session
 {

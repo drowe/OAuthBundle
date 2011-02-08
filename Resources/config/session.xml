@@ -5,11 +5,11 @@
     xsi:schemaLocation="http://www.symfony-project.org/schema/dic/services http://www.symfony-project.org/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="oauth.session.class">Bundle\OAuthBundle\Session</parameter>
+        <parameter key="oauth.session.class">OnePlusOne\OAuthBundle\Session</parameter>
     </parameters>
 
     <services>
-        <service id="oauth.session" class="%oauth.session.class%" shared="true">
+        <service id="oauth.session" class="%oauth.session.class%" scope="request">
             <argument type="service" id="session" />
 			<call method="addService">
 				<argument type="service" id="oauth.facebook" />

@@ -5,14 +5,14 @@
     xsi:schemaLocation="http://www.symfony-project.org/schema/dic/services http://www.symfony-project.org/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-		<parameter key="oauth.twitter.service.class">Bundle\OAuthBundle\Services\Twitter</parameter>
+		<parameter key="oauth.twitter.service.class">OnePlusOne\OAuthBundle\Services\Twitter</parameter>
         <parameter key="oauth.twitter.api.class">TwitterOAuth\Api</parameter>
 		<parameter key="oauth.twitter.key"></parameter>
         <parameter key="oauth.twitter.secret"></parameter>		
     </parameters>
 
 	<services>
-		<service id="oauth.twitter" class="%oauth.twitter.service.class%">
+		<service id="oauth.twitter" class="%oauth.twitter.service.class%" scope="request">
             <argument type="service" id="oauth.twitter.api" />
 			<call method="setSession">
 				<argument type="service" id="session" />

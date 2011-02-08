@@ -5,16 +5,16 @@
     xsi:schemaLocation="http://www.symfony-project.org/schema/dic/services http://www.symfony-project.org/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-		<parameter key="oauth.facebook.service.class">Bundle\OAuthBundle\Services\Facebook</parameter>
+		<parameter key="oauth.facebook.service.class">OnePlusOne\OAuthBundle\Services\Facebook</parameter>
         <parameter key="oauth.facebook.req_perms"></parameter>
         <parameter key="oauth.facebook.appId"></parameter>
         <parameter key="oauth.facebook.secret"></parameter>
         <parameter key="oauth.facebook.cookie">true</parameter>
-        <parameter key="oauth.facebook.api.file">%kernel.root_dir%/../src/vendor/facebook-php-sdk/src/facebook.php</parameter>
+        <parameter key="oauth.facebook.api.file">%kernel.root_dir%/../vendor/facebook-php-sdk/src/facebook.php</parameter>
     </parameters>
 
     <services>
-		<service id="oauth.facebook" class="%oauth.facebook.service.class%">
+		<service id="oauth.facebook" class="%oauth.facebook.service.class%" scope="request">
             <argument type="service" id="oauth.facebook.api" />
 			<argument key="req_perms">%oauth.facebook.req_perms%</argument>
 			<call method="setSession">

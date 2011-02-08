@@ -1,6 +1,6 @@
 <?php
 
-namespace Bundle\OAuthBundle;
+namespace OnePlusOne\OAuthBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

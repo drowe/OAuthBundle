@@ -5,9 +5,9 @@
     xsi:schemaLocation="http://www.symfony-project.org/schema/dic/services http://www.symfony-project.org/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="oauth.views.error">OAuthBundle:Auth:error.php</parameter>
-        <parameter key="oauth.views.logout">OAuthBundle:Auth:logout.php</parameter>
-        <parameter key="oauth.views.profile">OAuthBundle:Auth:profile.php</parameter>
-        <parameter key="oauth.views.service">OAuthBundle:Auth:service.php</parameter>
+        <parameter key="oauth.views.error">OAuthBundle:Auth:error.html.php</parameter>
+        <parameter key="oauth.views.logout">OAuthBundle:Auth:logout.html.php</parameter>
+        <parameter key="oauth.views.profile">OAuthBundle:Auth:profile.html.php</parameter>
+        <parameter key="oauth.views.service">OAuthBundle:Auth:service.html.php</parameter>
     </parameters>
 </container>

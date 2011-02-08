@@ -1,6 +1,6 @@
 <?php
 
-namespace Bundle\OAuthBundle\Services;
+namespace OnePlusOne\OAuthBundle\Services;
 
 class Facebook extends Service 
 {
